@@ -1,0 +1,16 @@
+---
+title: "Changes in CO2 emissions by continent"
+output: html_document
+date: '2022-05-29'
+---
+
+## Summary
+
+```{r echo = FALSE, message = FALSE, code = readLines("summary.R")}
+```
+
+By looking at the data set, we can see that the column of countries in the data contains a variety of data, including continents, countries, etc. In order to draw better and more comprehensive conclusions about CO2 emissions, I choose to use continents as the unit for analysis.
+
+In 2019, the world's total CO2 emissions are `r summary$co2_emis`. Among them, Asia has the highest emissions of `r summary$co2_emis_year_state_max`. And Oceania is the least, with only `r summary$co2_emis_year_min`. Meanwhile, by calculating the data for all years, I get that the average CO2 emissions are `r summary$co2_country_Asia` in Asia,`r summary$co2_country_Euro` in Europe,`r summary$co2_country_Nort` in North America,`r summary$co2_country_Sout` in South America and `r summary$co2_country_Oceania` in Oceania.
+
+Also this data has some limitations. In the column of countries, there are not only countries, but also continents with different income regions, etc. This haphazard grouping can often make it difficult to form a valid table because of the possibility of missing some rows. It is also true that some data from earlier years may have an impact on the calculation results, as the missing data may be large or small, and thus affect the conclusions drawn.
